@@ -14,3 +14,29 @@
   text-align: center;
   margin-top: 20%;
 }
+
+.button-start {
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
+  border-color: var(--text-primary-color);
+}
+
+.button-stop {
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
+  border-color: var(--text-primary-color);
+}
+
+.button-reset {
+  font-family: var(--primary-font);
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
+  border-color: var(--text-primary-color);
+}
+
+.date-time {
+  font-family: var(--primary-font);
+  color: var(--text-primary-color);
+}
