@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #6495ed;
+  --text-primary-color: #fff;
+  --primary-font: "Press Start 2P", monospace;
+}
+
+.body {
+  background-color: var(--primary-color);
+}
+
+.stopwatch {
+  color: var(--text-primary-color);
+  font-family: var(--primary-font);
+  text-align: center;
+  margin-top: 20%;
+}
