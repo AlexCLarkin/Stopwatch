@@ -8,7 +8,10 @@ window.onload = function () {
     var buttonStop = document.getElementById('button-stop');
     var buttonReset = document.getElementById('button-reset');
     var Interval ;
-  
+    var updateClockTimer = 0;
+    updateClock();
+
+
     buttonStart.onclick = function() {
       
       clearInterval(Interval);
@@ -56,23 +59,25 @@ window.onload = function () {
     
     }
 
-    
-     var currentTime = new Date()
+    function updateClock() {
+      updateClockTimer++;
+      var currentTime = new Date()
      var hours = currentTime.getHours()
      var minutes = currentTime.getMinutes()
-     var sec = currentTime.getSeconds()
+
      if (minutes < 10){
-         minutes = "0" + minutes
-     }
-     if (sec < 10){
-         sec = "0" + sec
-     }
+      minutes = "0" + minutes
+  }
      var t_str = hours + ":" + minutes + " ";
      if(hours > 11){
          t_str += "PM";
      } else {
         t_str += "AM";
      }
+     if (0 < updateClockTimer) {
+      updateClockTimer = updateClockTimer + 1;
       document.getElementById('time_span').innerHTML = t_str;
-      setTimeout(time,1000);
-  }
+     setTimeout(time,1000);
+    }
+    }
+      }
