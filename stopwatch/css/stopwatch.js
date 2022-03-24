@@ -8,8 +8,6 @@ window.onload = function () {
     var buttonStop = document.getElementById('button-stop');
     var buttonReset = document.getElementById('button-reset');
     var Interval ;
-    var updateClockTimer = 0;
-    updateClock();
 
 
     buttonStart.onclick = function() {
@@ -56,28 +54,22 @@ window.onload = function () {
       if (seconds > 9){
         appendSeconds.innerHTML = seconds;
       }
-    
     }
 
-    function updateClock() {
-      updateClockTimer++;
+    function updateTime(){
       var currentTime = new Date()
-     var hours = currentTime.getHours()
-     var minutes = currentTime.getMinutes()
-
-     if (minutes < 10){
-      minutes = "0" + minutes
-  }
-     var t_str = hours + ":" + minutes + " ";
-     if(hours > 11){
-         t_str += "PM";
-     } else {
-        t_str += "AM";
-     }
-     if (0 < updateClockTimer) {
-      updateClockTimer = updateClockTimer + 1;
-      document.getElementById('time_span').innerHTML = t_str;
-     setTimeout(time,1000);
-    }
-    }
+      var hours = currentTime.getHours()
+      var minutes = currentTime.getMinutes()
+      if (minutes < 10){
+          minutes = "0" + minutes
       }
+      var t_str = hours + ":" + minutes + " ";
+      if(hours > 11){
+          t_str += "PM";
+      } else {
+          t_str += "AM";
+      }
+      document.getElementById('time_span').innerHTML = t_str;
+  }
+  setInterval(updateTime, 1000);
+  }
